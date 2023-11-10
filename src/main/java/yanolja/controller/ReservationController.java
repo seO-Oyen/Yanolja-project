@@ -30,7 +30,6 @@ public class ReservationController {
 			periodNum = 6;
 		}
 		
-		
 		List<ReservationInfo> rlist = new ArrayList<ReservationInfo>();
 		rlist = rDao.getReservationInfo(category, periodNum);
 		

@@ -11,13 +11,9 @@ import java.util.List;
 import yanolja.vo.ReservationInfo;
 
 public class ReservationDao {
-	// 공통으로 사용할 전역 객체 선언
-	// 1. 연결
 	private Connection con;
-	// 2. 대화
 	private Statement stmt;
 	private PreparedStatement pstmt;
-	// 3. 결과
 	private ResultSet rs;
 	
 	ProductInfoDao productInfoDao = new ProductInfoDao();
@@ -44,10 +40,8 @@ public class ReservationDao {
 			}
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		
 		return rlist;
 	}
