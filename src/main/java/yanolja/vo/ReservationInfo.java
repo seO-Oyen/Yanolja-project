@@ -31,18 +31,8 @@ public class ReservationInfo {
 	public void setReservationDate(Date reservationDate) {
 		this.reservationDate = reservationDate;
 	}
-	public void getProductInfo() {
-		System.out.println(productInfo.isUsed() ? "이용완료" : "이용전");
-		System.out.println(productInfo.getName());
-		System.out.println(productInfo.getProduct());
-		System.out.print(productInfo.getStartDate() + " ~ ");
-		System.out.println(productInfo.getEndDate());
-		System.out.println(productInfo.isBus() ? "자동차" : "도보");
-		System.out.println("체크인 : " + productInfo.getCheckIn());
-		System.out.println("체크아웃 : " + productInfo.getCheckOut());
-		System.out.println(productInfo.isReview() ? "후기 작성 완료" : "후기 작성 전");
-		
-		
+	public ProductInfo getProductInfo() {
+		return productInfo;
 	}
 	public void setProductInfo(ProductInfo productInfo) {
 		this.productInfo = productInfo;

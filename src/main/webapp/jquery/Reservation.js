@@ -9,6 +9,12 @@ $(function () {
 	if (dval2 != 'null') {
 		$("#period").val(dval2).attr("selected", true);
 	}
+	
+	let review = $("[name=review]").text()
+	
+	for (var i = 0; i < review.length; i++) {
+		console.log(review[i])
+	}
 })
 
 // 카테고리 선택
@@ -29,3 +35,9 @@ $("#period").change(function() {
     location.replace(url)
     //$("#infoForm").attr("action", "?").submit()
 })
+
+function infoClick(infoNum) {
+	let url = "/yanolja/jsp/ReservationDetail.jsp?infoNum=" + infoNum
+	location.href = url
+}
+

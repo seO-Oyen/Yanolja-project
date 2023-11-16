@@ -41,5 +41,10 @@ public class ReservationController {
 		
 		return rlist;
 	}
+	
+	public ReservationInfo getReservation(int Num) {
+		
+		return rDao.getReservation(Num);
+	}
 
 }

@@ -1,0 +1,39 @@
+body {
+	background-color: var(--color-black);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#divbox1 {
+	margin-top: 10px;
+	border: 2px solid #DE2E5F;
+}
+
+#coment {
+	font-weight: bold;
+	margin-right: 100px;
+	margin-top: 50px;
+}
+
+#headerDiv {
+	float: left;
+	width: 300px;
+}
+
+#headerDiv > .header1 {
+	float: left;
+}
+
+#header2 {
+	font-size: 25px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#header3 {
+	font-size: 25px;
+	font-weight: bold;
+	margin-left: 53px;
+}

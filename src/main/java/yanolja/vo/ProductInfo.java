@@ -1,5 +1,7 @@
 package yanolja.vo;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ProductInfo {
@@ -101,7 +103,21 @@ public class ProductInfo {
 		this.product = product;
 	}
 	
-	
+	/*public boolean getUsed() {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date currentTime = new Date();
+		String date = format.format(currentTime);	
+		int compare;
+		try {
+			compare = endDate.compareTo(format.parse(date));
+			if (compare >= 0) {
+				return true;
+			}
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}*/
 	
 
 }

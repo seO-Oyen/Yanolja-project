@@ -1,0 +1,64 @@
+body {
+	background-color: var(--color-black);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#infoForm {
+	width: 400px;
+	height: 50px;
+	padding-left: 25px;
+}
+#infoForm > .selectBox{
+	float: left;
+}
+#select2 {
+	margin-left: 60px;
+}
+
+#category {
+	width: inherit;
+	height: inherit;
+	background: transparent;
+	border: 0 none;
+	outline: 0 none;
+	padding: 0 5px;
+	position: relative;
+	z-index: 3;
+}
+
+#period {
+	width: inherit;
+	height: inherit;
+	background: transparent;
+	border: 0 none;
+	outline: 0 none;
+	padding: 0 5px;
+	position: relative;
+	z-index: 3;
+}
+
+.selectBox {
+	position: relative;
+	width: 150px;
+	height: 35px;
+	border-radius: 4px;
+	border: 2px solid #DE2E5F;
+}
+
+#reservation {
+	text-align: center;
+	border: 2px solid #DE2E5F;
+	padding: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+#review {
+	margin-top: 10px;
+	border: 2px solid gray;
+	background-color: gray;
+	cursor: pointer;
+}
