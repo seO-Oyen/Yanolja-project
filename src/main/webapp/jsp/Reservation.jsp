@@ -63,8 +63,10 @@
 			<%=info.getProductInfo().getCheckIn()%>:00 | 체크아웃
 			<%=info.getProductInfo().getCheckOut()%>:00
 		</div>
-		<div id="review" name="review" style="">
-		<%=info.getProductInfo().isReview() ? "리뷰완료" : "리뷰작성"%></div>
+		<button type="button" id="review" name="review" 
+			<% if(info.getProductInfo().isReview()) { %>disabled style="cursor: default"<% }
+			else { %> onclick="writeReview()" <% } %>>
+		<%=info.getProductInfo().isReview() ? "리뷰완료" : "리뷰작성" %></button>
 
 		<%-- <div><%= info.getProductInfo() %></div> --%>
 		<%-- <div><%= info.getPersonInfo() %></div> --%>

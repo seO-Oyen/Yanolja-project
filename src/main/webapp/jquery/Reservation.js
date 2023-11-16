@@ -9,12 +9,6 @@ $(function () {
 	if (dval2 != 'null') {
 		$("#period").val(dval2).attr("selected", true);
 	}
-	
-	let review = $("[name=review]").text()
-	
-	for (var i = 0; i < review.length; i++) {
-		console.log(review[i])
-	}
 })
 
 // 카테고리 선택
@@ -41,3 +35,8 @@ function infoClick(infoNum) {
 	location.href = url
 }
 
+function writeReview() {
+	console.log("리뷰페이지 이동")
+	let url = "https://www.naver.com/"
+	location.href = url
+}
