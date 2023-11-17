@@ -30,13 +30,18 @@ $("#period").change(function() {
     //$("#infoForm").attr("action", "?").submit()
 })
 
+function writeReview(infoNum) {
+	let url = "/yanolja/jsp/WriteReview.jsp?infoNum=" + infoNum
+	location.href = url
+}
+
+function checkReview(infoNum) {
+	let url = "/yanolja/jsp/CheckReview.jsp?infoNum=" + infoNum
+	location.href = url
+}
+
 function infoClick(infoNum) {
 	let url = "/yanolja/jsp/ReservationDetail.jsp?infoNum=" + infoNum
 	location.href = url
 }
 
-function writeReview() {
-	console.log("리뷰페이지 이동")
-	let url = "https://www.naver.com/"
-	location.href = url
-}

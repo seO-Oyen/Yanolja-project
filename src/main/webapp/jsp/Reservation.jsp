@@ -48,24 +48,27 @@
 			ReservationInfo info = rlist.get(i);
 			int infoNum = info.getProductInfo().getProductInfo();
 	%>
-	<div id="reservation" name="reservation" onclick="infoClick(<%=infoNum%>)">
-		<h4><%=info.getReservationDate()%></h4>
-		<div><%=info.getProductInfo().isUsed() ? "이용완료" : "이용전"%></div>
-		<div><%=info.getProductInfo().getName()%></div>
-		<div><%=info.getProductInfo().getProduct()%></div>
-		<div><%=info.getProductInfo().getStartDate()%>
+	<div id="reservation" name="reservation">
+		<div onclick="infoClick(<%=infoNum%>)">
+		<h4 class="detail"><%=info.getReservationDate()%></h4>
+		<div class="detail"><%=info.getProductInfo().isUsed() ? "이용완료" : "이용전"%></div>
+		<div class="detail"><%=info.getProductInfo().getName()%></div>
+		<div class="detail"><%=info.getProductInfo().getProduct()%></div>
+		<div class="detail"><%=info.getProductInfo().getStartDate()%>
 			~
 			<%=info.getProductInfo().getEndDate()%>
 		</div>
-		<div><%=info.getProductInfo().isBus() ? "자동차" : "도보"%></div>
-		<div>
+		<div class="detail"><%=info.getProductInfo().isBus() ? "자동차" : "도보"%></div>
+		<div class="detail">
 			체크인
 			<%=info.getProductInfo().getCheckIn()%>:00 | 체크아웃
 			<%=info.getProductInfo().getCheckOut()%>:00
 		</div>
+		</div>
+		<!-- disabled style="cursor: default" -->
 		<button type="button" id="review" name="review" 
-			<% if(info.getProductInfo().isReview()) { %>disabled style="cursor: default"<% }
-			else { %> onclick="writeReview()" <% } %>>
+			<% if(info.getProductInfo().isReview()) { %>onclick="checkReview(<%=infoNum%>)" <% }
+			else { %> onclick="writeReview(<%=infoNum%>)" style="background-color: #DE2E5F; border: 2px solid #DE2E5F; color: white;" <% } %>>
 		<%=info.getProductInfo().isReview() ? "리뷰완료" : "리뷰작성" %></button>
 
 		<%-- <div><%= info.getProductInfo() %></div> --%>

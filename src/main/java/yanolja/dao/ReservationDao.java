@@ -23,7 +23,9 @@ public class ReservationDao {
 	public List<ReservationInfo> getReservationInfo(String category, int period) {
 
 		List<ReservationInfo> rlist = new ArrayList<ReservationInfo>();
-		String sql = "SELECT *\r\n" + "FROM RESERVATIONINFO\r\n" + "WHERE RESERVATIONDATE > ADD_MONTHS(SYSDATE, -"
+		String sql = "SELECT *\r\n" 
+				+ "FROM RESERVATIONINFO\r\n" 
+				+ "WHERE RESERVATIONDATE > ADD_MONTHS(SYSDATE, -"
 				+ period + ")\r\n" + "ORDER BY RESERVATIONDATE DESC";
 
 		try {
@@ -70,6 +72,27 @@ public class ReservationDao {
 		}
 		
 		return reservation;
+	}
+	
+	public void setReview(int infoNum) {
+		String sql = "UPDATE PRODUCTINFO  SET\r\n"
+				+ "	REVIEW = '1'\r\n"
+				+ "WHERE PRODUCTINFO = ?";
+		
+		try (Connection con = DBCon.con(); PreparedStatement pstmt = con.prepareStatement(sql);) {
+			// 처리코드1
+			pstmt.setInt(1, infoNum);
+			try (ResultSet rs = pstmt.executeQuery();) {
+				// 처리코드 2
+				if(rs.next()) {
+					System.out.println("처리완료");
+				}
+			}
+		} catch (SQLException e) {
+			System.out.println("DB에러 : " + e.getMessage());
+		} catch (Exception e) {
+			System.out.println("일반 에러 : " + e.getMessage());
+		}
 		
 	}
 
